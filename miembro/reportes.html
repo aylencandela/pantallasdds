@@ -18,11 +18,11 @@
         <div class="header_toggle">
             <i class='bx bx-menu' id="header-toggle"></i>
         </div>
-        <div class="btn">
+        <div class="dropdown-center">
             <button type="button" class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               Usuario
             </button>
-            <ul class="dropdown-menu dropdown-menu-end">
+            <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Mi perfil</a></li>
               <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
             </ul>
@@ -36,31 +36,23 @@
                     <span class="nav_logo-name">Mi impacto ambiental</span>
                 </a>
                 <div class="nav_list">
-                    <a href="#" class="nav_link active">
+                    <a href="index.html" class="nav_link">
                         <i class='bx bx-home-alt nav_icon'></i>
                         <span class="nav_name">Home</span> 
                     </a> 
-                    <a href="#" class="nav_link"> 
+                    <a href="mis-organizaciones.html" class="nav_link"> 
+                        <i class='bx bx-briefcase nav_icon'></i> 
+                        <span class="nav_name">Mis organizaciones</span>
+                    </a> 
+                    <a href="calculadora.html" class="nav_link"> 
                         <i class='bx bx-calculator nav_icon'></i> 
                         <span class="nav_name">Calculadora</span>
                     </a> 
-                    <a href="#" class="nav_link"> 
-                        <i class='bx bx-edit nav_icon'></i> 
-                        <span class="nav_name">Registrar mediciones</span>
+                    <a href="registrar-trayectos.html" class="nav_link"> 
+                        <i class='bx bx-bus nav_icon'></i> 
+                        <span class="nav_name">Registrar trayecto</span>
                     </a>
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-user-plus nav_icon'></i>
-                        <span class="nav_name">Vincular miembro</span>
-                    </a> 
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-buildings nav_icon'></i>
-                        <span class="nav_name">Mis sectores</span>
-                    </a>
-                    <a href="#" class="nav_link">
-                        <i class='bx bxs-contact nav_icon'></i>
-                        <span class="nav_name">Mis contactos</span>
-                    </a>
-                    <a href="#" class="nav_link">
+                    <a href="#" class="nav_link active">
                         <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
                         <span class="nav_name">Reportes</span>
                     </a>
@@ -69,25 +61,13 @@
         </nav>
     </div>
     <!--Container Main start-->
-    <div class=" bg-light">
-        <h4>Registrar mediciones</h4>
-    </div>
     <main>
-        <p>Inserte a continuación la planilla Excel .xlsx 
-            respetando el formato detallado aqui.</p>
-        <div class="uploader-container">
-            <div class="drag-image">
-                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                <h6>Drag & Drop File Here</h6>
-                <span>OR</span>
-                <button>Browse File</button>
-                <input type="file" hidden>
-              </div>
-        </div>
+        <article>
+            <h2>Reportes</h2>
+        </article>
     </main>
     <!--Container Main end-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="nav.js"></script>  
 </body>
-
 </html>

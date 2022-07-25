@@ -62,42 +62,63 @@
     </div>
     <!--Container Main start-->
     <main>
-        <article>
-            <h2>Mis organizaciones</h2>
-            <p>UTN - Sector 3</p>
-        </article>
         <section>
-            <div class="form-container">
-                <h2>Agregar nueva organizacion</h2>
-                <form action="organizaciones-form" method="post">
-                    <ul style="list-style: none">
-                        <li>
-                        <label for="nombre-organizacion">Seleccionar organizacion:</label>
-                        <select name="organizaciones" id="organizaciones-select">
-                        <option value="Mostaza">Mostaza</option>
-                        <option value="Mc Patos">Mc Patos</option>
-                        <option value="Burger King">Burger King</option>
-                        <option value="KFC">KFC</option>
+            <h2>Mis organizaciones</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <p class="nombre-organizacion d-inline-block">Mostaza</p>
+                    <span> - </span>
+                    <p class="nombre-sector d-inline-block">Recursos Humanos</p>
+                </li>
+                <li class="list-group-item">
+                    <p class="nombre-organizacion d-inline-block">Mostaza</p>
+                    <span> - </span>
+                    <p class="nombre-sector d-inline-block">Contaduría</p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Agregar nueva organizacion</h2>
+                <form class="row g-3 align-items-end">
+                    <div class="col-6">
+                        <label for="inputState" class="form-label">Seleccione una organizacion</label> 
+                        <select id="inputState" class="form-select form-select-sm">
+                           <option selected>Seleccionar...</option>
+                           <option value="Mostaza">Mostaza</option>
+                           <option value="Mc-Donalds">McDonalds</option>
+                           <option value="Burger-King">Burger King</option>
+                           <option value="KFC">KFC</option>
                         </select>
-                        </li>
-                        <li>
-                        <label for="nombre-sector">Seleccionar sector:</label>
-                        <select name="sectores" id="sectores-select">
-                            <option value="Sector 1">Sector 1</option>
-                            <option value="Sector 2">Sector 2</option>
-                            <option value="Sector 3">Sector 3</option>
-                            <option value="Sector 4">Sector 4</option>
-                            </select>
-                        </li>
-                        <li class="button">
-                        <button type="submit">Solicitar vinculacion</button>
-                        </li>
-                    </ul>
-                    </form>
-                    <h2>Solicitudes pendientes</h2>
-                    <p>Mostaza - Sector 3</p>
-            </div>
+                    </div>
+                    <div class="col-4">
+                       <label for="inputState" class="form-label">Seleccione un sector</label> 
+                       <select id="inputState" class="form-select form-select-sm">
+                          <option selected>Seleccionar...</option>
+                          <option value="sector-1">Sector 1</option>
+                          <option value="sector-2">Sector 2</option>
+                          <option value="sector-3">Sector 3</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button type="submit" class="btn btn-sm btn-outline-primary text-nowrap">Solicitar vinculación</button>
+                    </div>
+                </form>
         </section>  
+        <section>
+            <h2>Solicitudes pendientes</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <p class="nombre-organizacion d-inline-block">UTN</p>
+                    <span> - </span>
+                    <p class="nombre-sector d-inline-block">Tesorería</p>
+                </li>
+                <li class="list-group-item">
+                    <p class="nombre-organizacion d-inline-block">UTN</p>
+                    <span> - </span>
+                    <p class="nombre-sector d-inline-block">Sector 3</p>
+                </li>
+            </ul>
+        </section>
     </main>
     <!--Container Main end-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

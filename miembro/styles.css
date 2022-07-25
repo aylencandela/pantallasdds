@@ -10,8 +10,10 @@
     --thrd--color: #F7D519;
     --white-color: #F2F3F2;
     --black-color: #0C0D0D;
+    --grey-color: #D0D0D0;
     --body-font: 'Poppins', sans-serif;
    /* --poppins-font: 'Poppins', sans-serif;*/
+    --title-font-size: 1.3rem;
     --normal-font-size: 0.8rem;
     --z-fixed: 100
 }
@@ -197,14 +199,18 @@ a {
 main {
     display: flex;
     flex-direction: column;
+    gap: 35px;
+}
+
+h2 {
+    font-size:var(--title-font-size);
 }
 
 /* Revisar este wrap */
 section {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -216,6 +222,16 @@ section {
 }
 
 /* Formulario Organizaicones */
+.list-group-item {
+    background-color: var(--white-color);
+    border: 1px solid var(--grey-color);
+}
+
+.list-group-item > p {
+    margin: 0;
+    margin: .5rem;
+}
+
 
 .form-container {
     display: flex;
@@ -239,4 +255,23 @@ section {
     margin: 0px 20px 0px 0px;
 }
 
+/* buttons */
+
+.btn-outline-primary{
+    color: var(--first-color);
+    border-color: var(--first-color);
+}
+
+.btn-outline-primary:hover {
+    color: var(--white-color);
+    border-color: var(--first-color);
+    background-color: var(--first-color);
+}
+
+
+.btn-primary,  .btn-primary:hover {
+    color: var(--white-color);
+    border-color: var(--first-color);
+    background-color: var(--first-color);
+}
 

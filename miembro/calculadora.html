@@ -62,9 +62,32 @@
     </div>
     <!--Container Main start-->
     <main>
-        <article>
+        <section>
             <h2>Calculadora Huella de Carbono</h2>
-        </article>
+        </section>
+        <section>
+            <form class="row g-3">
+                <div>
+                    <label for="inputState" class="form-label">Seleccione una periodicidad</label> 
+                    <select id="inputState" class="form-select form-select-sm">
+                        <option selected>Seleccionar...</option>
+                        <option value="mensual">Mensual</option>
+                        <option value="anual">Anual</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="exampleFormControlInput1" class="form-label">Ingrese un período</label>
+                    <input type="text" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="MM/AAAA">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-sm btn-outline-primary text-nowrap">Calcular</button>
+                </div>
+            </form>
+        </section>
+        <section>
+            <h5>Resultado</h5>
+            
+        </section>
     </main>
     <!--Container Main end-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

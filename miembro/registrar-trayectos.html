@@ -62,26 +62,23 @@
     </div>
     <!--Container Main start-->
     <main>
-        <article>
-            <h2>Registrar trayecto</h2>
-        </article>
-        <section>
-            <form>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <section>
+                <h2>Registrar trayecto</h2>
+                <p>Complete los datos requeridos a continuacion</p>
+            </section>
+              <div class="mb-3">
+                <h3>Nuevo trayecto</h3>
+                <form action="calculadora-form" method="post">
+                        <label class="form-label" for="nombre-origen">Ingrese origen</label>
+                        <input id="origen-id" class="form-control form-control-sm"  type="text" name="origen">
+ 
+                        <label class="form-label" for="nombre-destino">Ingrese destino</label>
+                        <input id="destino-id" class="form-control form-control-sm"  type="text" name="destino">
+
+                        <label class="form-label" for="fecha-periodo">Ingrese frecuencia por semana</label>
+                        <input id="fecuencia-id" class="form-control form-control-sm"   type="text" name="frecuencia">
+                   </form>
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
         </section>
     </main>
     <!--Container Main end-->

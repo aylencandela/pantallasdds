@@ -23,7 +23,7 @@
               Usuario
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="mi-perfil.html">Mi perfil</a></li>
               <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
             </ul>
         </div>
@@ -62,23 +62,26 @@
     </div>
     <!--Container Main start-->
     <main>
-            <section>
-                <h2>Registrar trayecto</h2>
-                <p>Complete los datos requeridos a continuacion</p>
-            </section>
-              <div class="mb-3">
+        <section>
+            <h2>Registrar trayecto</h2>
+            <p>Complete los datos requeridos a continuacion</p>
+        </section>
+            <div class="mb-3">
                 <h3>Nuevo trayecto</h3>
                 <form action="calculadora-form" method="post">
                         <label class="form-label" for="nombre-origen">Ingrese origen</label>
                         <input id="origen-id" class="form-control form-control-sm"  type="text" name="origen">
- 
+
                         <label class="form-label" for="nombre-destino">Ingrese destino</label>
                         <input id="destino-id" class="form-control form-control-sm"  type="text" name="destino">
 
                         <label class="form-label" for="fecha-periodo">Ingrese frecuencia por semana</label>
                         <input id="fecuencia-id" class="form-control form-control-sm"   type="text" name="frecuencia">
-                   </form>
+                </form>
+                <div>
+                    <a class="btn btn-sm d-flex align-items-center" href="registrar-trayectos-02.html">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
                 </div>
+            </div>
         </section>
     </main>
     <!--Container Main end-->

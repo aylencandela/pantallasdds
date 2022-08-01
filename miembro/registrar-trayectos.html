@@ -71,7 +71,7 @@
             <div class="form-step" id="form-step-0">
                 <div class="row">
                     <h3>Nuevo trayecto</h3>
-                    <form action="trayecto-form" method="post" class="col-3">
+                    <form action="trayecto-form" method="post" class="col-4">
                         <label class="form-label" for="origen">Ingrese un nombre para el origen</label>
                         <input id="origen" class="form-control form-control-sm" type="text" name="origen">
     
@@ -84,7 +84,7 @@
                 </div>
                 <div class="form-nav p-3">
                     <a class="btn btn-sm d-flex align-items-center" href="#"></a>
-                    <a id="js-next-step" class="btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                    <a class="go-step-1 btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
                 </div>
             </div>
             <!-- PASO 1 -->
@@ -92,9 +92,9 @@
                 <div class="row">
                     <h3>Añadir tramo</h3>   
                     <form action="tramo-form" method="post" class="col-4">
-                        <label class="form-label" for="descripcion-tramo">Ingrese una descripcion para el tramo</label>
-                        <!-- <input id="descripcion-tramo" class="form-control form-control-sm"  type="text" name="descripcion-tramo"> -->
-                        <textarea id="descripcion-tramo" class="form-control form-control-sm" name="descripcion-tramo" rows="3" placeholder="Escribe una descripcion aquí."></textarea>
+                        <label class="form-label" for="tramo-descripcion">Ingrese una descripcion para el tramo</label>
+                        <!-- <input id="tramo-descripcion" class="form-control form-control-sm"  type="text" name="descripcion-tramo"> -->
+                        <textarea id="tramo-descripcion" class="form-control form-control-sm" name="tramo-descripcion" rows="3" placeholder="Escribe una descripcion aquí."></textarea>
                         
                         <fieldset>
                             <legend>Direccion de partida</legend>
@@ -147,7 +147,7 @@
                             <legend>Medio de transporte</legend>
                             <label class="form-label" for="transporte">Seleccionar tipo de transporte:</label>
                             <select id="transporte" class="form-select form-select-sm" name="transporte">
-                                <option value="" selected="selected"></option>
+                                <option value="" selected="selected">--</option>
                                 <option value="vehiculo-particular">Vehiculo particular</option>
                                 <option value="servicio-contratado">Servicio contratado</option>
                                 <option value="transporte-publico">Transporte público</option>
@@ -157,17 +157,18 @@
                     </form>
                 </div>
                 <div class="form-nav p-3">
-                    <a id="go-step-0" class="btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
-                    <a id="go-step-2" class="btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                    <a class="go-step-0 btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
+                    <a class="go-step-2 btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
                 </div>
             </div>
-            <!-- Step 2 -->
+            <!-- Step 2 SEGUN TRANSPORTE-->
             <div class="form-step" id="vehiculo-particular">
                 <div class="row">
                     <h3>Añadir tramo</h3>
-                    <form action="">
+                    <form action="" method="post" class="col-4">
                         <label class="form-label" for="vehiculo">Seleccionar tipo de vehiculo:</label>
                         <select class="form-select form-select-sm" name="vehiculo" id="vehiculo">
+                            <option value="" selected="selected">--</option>
                             <option value="auto">Auto</option>
                             <option value="moto">Moto</option>
                             <option value="camioneta">Camioneta</option>
@@ -175,6 +176,7 @@
                                 
                         <label class="form-label" for="combustible">Seleccionar tipo de combustible:</label>
                         <select class="form-select form-select-sm" name="combustible" id="combustible">
+                            <option value="" selected="selected">--</option>
                             <option value="gnc">GNC</option>
                             <option value="nafta">Nafta</option>
                             <option value="electrico">Electrico</option>
@@ -183,31 +185,148 @@
                     </form>
                 </div>
                 <div class="form-nav p-3">
-                    <!-- <a id="go-step-1" class="btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a> -->
-                    <a id="go-step-3" class="btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                    <a class="go-step-1 btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
+                    <a class="go-step-3 btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
                 </div>
             </div>
-            <div class="form-step" id="servicio-contratado"></div>
-            <div class="form-step" id="transporte-publico"></div>
-            <div class="form-step" id="transporte-ecologico">
-                <label class="form-label" for="nombre-transporte-publico">Seleccionar tipo de transporte:</label>
-                <select class="form-select form-select-sm" name="transportes-publicos" id="transportes-publicos-select">
-                    <option value="GNC">Caminar</option>
-                    <option value="Nafta">Bicicleta</option>
-                    <option value="Electrico">Monopatin</option>
-                </select>
-        
-                <label class="form-label" for="nombre-descripcion">Ingrese descripción</label>
-                <input id="nombre-descripcion" class="form-control form-control-sm"  type="text" name="nombre-name">
-        
-            </div>
-            <div class="participantes"></div>
+            <!-- Form Servicio Contratado -->
+            <div class="form-step" id="servicio-contratado">
+                <div class="row">
+                    <h3>Añadir tramo</h3>
+                    <form action="" method="post" class="col-4">
+                        <label class="form-label" for="contratado">Ingrese nombre</label>
+                        <input id="contratado" class="form-control form-control-sm"  type="text" name="contratado">
+                
+                        <label class="form-label" for="contratado-descripcion">Ingrese descripcion</label>
+                        <!-- <input id="contratado-descripcion" class="form-control form-control-sm"  type="text" name="contratado-descripcion"> -->
+                        <textarea id="contratado-descripcion" class="form-control form-control-sm" name="contratado-descripcion" rows="3" placeholder="Escribe una descripcion aquí."></textarea>
 
+                    </form>
+                </div>
+                <div class="form-nav p-3">
+                    <a class="go-step-1 btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
+                    <a class="go-step-3 btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+            <!-- Form Transporte Público -->
+            <div class="form-step" id="transporte-publico">
+                <div class="row">
+                    <h3>Añadir tramo</h3>
+                    <form action="" method="post" class="col-4">
+                        <label class="form-label" for="publico">Seleccionar tipo de transporte:</label>
+                        <select class="form-select form-select-sm" name="publico" id="publico">
+                            <option value="" selected="selected">--</option>
+                            <option value="colectivo">Colectivo</option>
+                            <option value="subte">Subte</option>
+                            <option value="tren">Tren</option>
+                        </select>
+                
+                        <label class="form-label" for="linea">Ingrese linea</label>
+                        <input id="linea" class="form-control form-control-sm"  type="text" name="linea">
+                    </form>
+                </div>
+                <div class="form-nav p-3">
+                    <a class="go-step-1 btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
+                    <a class="go-step-4 btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+            <!-- Form Transporte Ecológico -->
+            <div class="form-step" id="transporte-ecologico">
+                <div class="row">
+                    <h3>Añadir tramo</h3>
+                    <form action="" method="post" class="col-4">
+                        <label class="form-label" for="transporte-publico">Seleccionar tipo de transporte:</label>
+                        <select class="form-select form-select-sm" name="transporte-publico" id="transporte-publico">
+                            <option value="" selected="selected">--</option>
+                            <option value="caminar">Caminar</option>
+                            <option value="bicicleta">Bicicleta</option>
+                            <option value="monopatin">Monopatin</option>
+                        </select>
+                
+                        <label class="form-label" for="ecologico-descripcion">Ingrese descripción</label>
+                        <!-- <input id="ecologico-descripcion" class="form-control form-control-sm"  type="text" name="ecologico-descripcion"> -->
+                        <textarea id="ecologico-descripcion" class="form-control form-control-sm" name="ecologico-descripcion" rows="3" placeholder="Escribe una descripcion aquí."></textarea>
+                    </form>
+                </div>
+                <div class="form-nav p-3">
+                    <a class="go-step-1 btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
+                    <a class="go-step-4 btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+            <!-- Step 3 AÑADIR ACOMPAÑANTE-->
+            <div class="form-step" id="form-step-3">
+                <div class="row">
+                    <div class="col-6">
+                        <section class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check-tramo-compartido">
+                                <label class="form-check-label" for="check-tramo-compartido">Tramo compartido</label>
+                            </div>
+                        </section>
+                        <section>
+                            <form action="">
+                                <h3>Añadir participante</h3>
+                                <label class="form-label" for="nombre-participante">Ingrese nombre</label>
+                                <input id="nombre-participante" class="form-control form-control-sm"  type="text" name="nombre-participante">
+                                <label class="form-label" for="apellido-participante">Ingrese apellido</label>
+                                <input id="apellido-participante" class="form-control form-control-sm"  type="text" name="apellido-participante">
+                                <label class="form-label" for="nombre-organizacion">Ingrese organizacion</label>
+                                <input id="nombre-organizacion" class="form-control form-control-sm"  type="text" name="nombre-organizacion">
+                                <button type="submit" class="btn btn-sm btn-outline-primary text-nowrap m-3">Añadir participante</button>       
+                            </form>
+                        </section>
+                    </div>
+                    <div class="col-6">
+                        <h3>Participantes</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <p class="nombre-participante d-inline-block">Jose Martinez</p>
+                                <span> - </span>
+                                <p class="sector-participante d-inline-block">Mostaza</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="nombre-participante d-inline-block">Mariela Fernandez</p>
+                                <span> - </span>
+                                <p class="sector-participante d-inline-block">Mostaza</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-nav p-3">
+                    <a class="go-step-2 btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
+                    <a class="go-step-4 btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+            <div class="form-step" id="form-step-4">
+                <div class="row">
+                    <h3>Resumen</h3>
+                    <form action="tramo-form">
+                        <p>Resumen tramo</p>
+                        <button type="submit" class="btn btn-sm btn-outline-primary text-nowrap m-3">Añadir otro tramo</button>       
+                    </form>
+                </div>
+                <div class="form-nav p-3">
+                    <a class="go-step-2 btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
+                    <a class="go-step-5 btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+            <div class="form-step" id="form-step-5">
+                <div class="row">
+                    <h3>Resumen</h3>
+                    <form action="trayecto-form">
+                        <p>Resumen trayecto</p>
+                        <button type="submit" class="btn btn-sm btn-outline-primary text-nowrap m-3">Registrar trayecto</button>       
+                    </form>
+                </div>
+                <div class="form-nav p-3">
+                    <a class="go-step-4 btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
+                    <a class="btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
         </section>
     </main>
     <!--Container Main end-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="nav.js"></script>
     <script src="registrar-trayecto.js"></script>
 </body>

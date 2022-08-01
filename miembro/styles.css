@@ -228,6 +228,40 @@ section {
     height: 300px;
 }
 
+/* Buttons */
+
+.btn-outline-primary{
+    color: var(--first-color);
+    border-color: var(--first-color);
+}
+
+.btn-outline-primary:hover {
+    color: var(--white-color);
+    border-color: var(--first-color);
+    background-color: var(--first-color);
+}
+
+.btn-primary,  .btn-primary:hover {
+    color: var(--white-color);
+    border-color: var(--first-color);
+    background-color: var(--first-color);
+}
+
+#valorhc {
+    font-size: x-large;
+    font-weight: bold;
+    color: var(--first-color)
+}
+
+#unidadhc {
+    font-size: large;
+    font-weight: bold;
+}
+
+img {
+    width: 300px;
+}
+
 /* Formulario Organizaicones */
 
 .list-group-item {
@@ -263,41 +297,9 @@ section {
     margin: 0px 20px 0px 0px;
 }
 
-/* Buttons */
 
-.btn-outline-primary{
-    color: var(--first-color);
-    border-color: var(--first-color);
-}
 
-.btn-outline-primary:hover {
-    color: var(--white-color);
-    border-color: var(--first-color);
-    background-color: var(--first-color);
-}
-
-.btn-primary,  .btn-primary:hover {
-    color: var(--white-color);
-    border-color: var(--first-color);
-    background-color: var(--first-color);
-}
-
-#valorhc {
-    font-size: x-large;
-    font-weight: bold;
-    color: var(--first-color)
-}
-
-#unidadhc {
-    font-size: large;
-    font-weight: bold;
-}
-
-img {
-    width: 300px;
-}
-
-/*Registrar trayecto*/
+/*Formularios Registrar trayecto*/
 
 legend {
     font-size: var(--normal-font-size);
@@ -307,8 +309,10 @@ legend {
 
 .form-step {
     width: 100%;
+    min-height: calc(100vh - (var(--header-height) + 8.5rem));
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .form-nav {

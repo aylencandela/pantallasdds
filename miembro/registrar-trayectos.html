@@ -61,31 +61,154 @@
         </nav>
     </div>
     <!--Container Main start-->
-    <main>
+    <main class="container">
         <section>
             <h2>Registrar trayecto</h2>
             <p>Complete los datos requeridos a continuacion</p>
         </section>
-            <div class="mb-3">
-                <h3>Nuevo trayecto</h3>
-                <form action="calculadora-form" method="post">
-                        <label class="form-label" for="nombre-origen">Ingrese origen</label>
-                        <input id="origen-id" class="form-control form-control-sm"  type="text" name="origen">
-
-                        <label class="form-label" for="nombre-destino">Ingrese destino</label>
-                        <input id="destino-id" class="form-control form-control-sm"  type="text" name="destino">
-
-                        <label class="form-label" for="fecha-periodo">Ingrese frecuencia por semana</label>
-                        <input id="fecuencia-id" class="form-control form-control-sm"   type="text" name="frecuencia">
-                </form>
-                <div>
-                    <a class="btn btn-sm d-flex align-items-center" href="registrar-trayectos-02.html">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+        <section>
+            <!-- PASO 0 -->
+            <div class="form-step" id="form-step-0">
+                <div class="row">
+                    <h3>Nuevo trayecto</h3>
+                    <form action="trayecto-form" method="post" class="col-3">
+                        <label class="form-label" for="origen">Ingrese un nombre para el origen</label>
+                        <input id="origen" class="form-control form-control-sm" type="text" name="origen">
+    
+                        <label class="form-label" for="destino">Ingrese un nombre para el destino</label>
+                        <input id="destino" class="form-control form-control-sm" type="text" name="destino">
+    
+                        <label class="form-label" for="frecuencia">Ingrese frecuencia por semana</label>
+                        <input id="frecuencia" class="form-control form-control-sm" type="number" name="frecuencia">
+                    </form>
+                </div>
+                <div class="form-nav p-3">
+                    <a class="btn btn-sm d-flex align-items-center" href="#"></a>
+                    <a id="js-next-step" class="btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
                 </div>
             </div>
+            <!-- PASO 1 -->
+            <div class="form-step" id="form-step-1">
+                <div class="row">
+                    <h3>Añadir tramo</h3>   
+                    <form action="tramo-form" method="post" class="col-4">
+                        <label class="form-label" for="descripcion-tramo">Ingrese una descripcion para el tramo</label>
+                        <!-- <input id="descripcion-tramo" class="form-control form-control-sm"  type="text" name="descripcion-tramo"> -->
+                        <textarea id="descripcion-tramo" class="form-control form-control-sm" name="descripcion-tramo" rows="3" placeholder="Escribe una descripcion aquí."></textarea>
+                        
+                        <fieldset>
+                            <legend>Direccion de partida</legend>
+    
+                            <label class="form-label" for="provincia-partida">Provincia</label>
+                            <input id="provincia-partida" class="form-control form-control-sm"  type="text" name="provincia-partida">
+    
+                            <label class="form-label" for="ciudad-partida">Ciudad</label>
+                            <input id="ciudad-partida" class="form-control form-control-sm"  type="text" name="ciudad-partida">
+    
+                            <label class="form-label" for="localidad-partida">Localidad</label>
+                            <input id="localidad-partida" class="form-control form-control-sm"  type="text" name="localidad-partida">
+    
+                            <div class="row g-3">
+                                <div class="col-8">
+                                    <label class="form-label" for="calle-partida">Calle</label>
+                                    <input id="calle-partida" class="form-control form-control-sm"  type="text" name="calle-partida">    
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label" for="altura-partida">Altura</label>
+                                    <input id="altura-partida" class="form-control form-control-sm"  type="text" name="altura-partida">    
+                                </div>
+                            </div>
+                        </fieldset>
+    
+                        <fieldset>
+                            <legend>Direccion de llegada</legend>
+    
+                            <label class="form-label" for="provincia-llegada">Provincia</label>
+                            <input id="provincia-llegada" class="form-control form-control-sm"  type="text" name="provincia-llegada">
+    
+                            <label class="form-label" for="ciudad-llegada">Ciudad</label>
+                            <input id="ciudad-llegada" class="form-control form-control-sm"  type="text" name="ciudad-llegada">
+    
+                            <label class="form-label" for="localidad-llegada">Localidad</label>
+                            <input id="localidad-llegada" class="form-control form-control-sm"  type="text" name="localidad-llegada">
+    
+                            <div class="row g-3">
+                                <div class="col-8">
+                                    <label class="form-label" for="calle-llegada">Calle</label>
+                                    <input id="calle-llegada" class="form-control form-control-sm"  type="text" name="calle-llegada">    
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label" for="altura-llegada">Altura</label>
+                                    <input id="altura-llegada" class="form-control form-control-sm"  type="text" name="altura-llegada">    
+                                </div>
+                            </div> 
+                        </fieldset>
+                        <fieldset>
+                            <legend>Medio de transporte</legend>
+                            <label class="form-label" for="transporte">Seleccionar tipo de transporte:</label>
+                            <select id="transporte" class="form-select form-select-sm" name="transporte">
+                                <option value="" selected="selected"></option>
+                                <option value="vehiculo-particular">Vehiculo particular</option>
+                                <option value="servicio-contratado">Servicio contratado</option>
+                                <option value="transporte-publico">Transporte público</option>
+                                <option value="transporte-ecologico">Transporte ecologico</option>
+                            </select>     
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="form-nav p-3">
+                    <a id="go-step-0" class="btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a>
+                    <a id="go-step-2" class="btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="form-step" id="vehiculo-particular">
+                <div class="row">
+                    <h3>Añadir tramo</h3>
+                    <form action="">
+                        <label class="form-label" for="vehiculo">Seleccionar tipo de vehiculo:</label>
+                        <select class="form-select form-select-sm" name="vehiculo" id="vehiculo">
+                            <option value="auto">Auto</option>
+                            <option value="moto">Moto</option>
+                            <option value="camioneta">Camioneta</option>
+                        </select>
+                                
+                        <label class="form-label" for="combustible">Seleccionar tipo de combustible:</label>
+                        <select class="form-select form-select-sm" name="combustible" id="combustible">
+                            <option value="gnc">GNC</option>
+                            <option value="nafta">Nafta</option>
+                            <option value="electrico">Electrico</option>
+                            <option value="gasoil">Gasoil</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="form-nav p-3">
+                    <!-- <a id="go-step-1" class="btn btn-sm d-flex align-items-center" href="#"><i class='bx bx-left-arrow-alt'></i>Atrás</a> -->
+                    <a id="go-step-3" class="btn btn-sm d-flex align-items-center" href="#">Siguiente<i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+            <div class="form-step" id="servicio-contratado"></div>
+            <div class="form-step" id="transporte-publico"></div>
+            <div class="form-step" id="transporte-ecologico">
+                <label class="form-label" for="nombre-transporte-publico">Seleccionar tipo de transporte:</label>
+                <select class="form-select form-select-sm" name="transportes-publicos" id="transportes-publicos-select">
+                    <option value="GNC">Caminar</option>
+                    <option value="Nafta">Bicicleta</option>
+                    <option value="Electrico">Monopatin</option>
+                </select>
+        
+                <label class="form-label" for="nombre-descripcion">Ingrese descripción</label>
+                <input id="nombre-descripcion" class="form-control form-control-sm"  type="text" name="nombre-name">
+        
+            </div>
+            <div class="participantes"></div>
+
         </section>
     </main>
     <!--Container Main end-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="nav.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="nav.js"></script>
+    <script src="registrar-trayecto.js"></script>
 </body>
 </html>
